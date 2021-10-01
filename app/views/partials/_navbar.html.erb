@@ -10,8 +10,8 @@
           <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></span>
         
         <% else %>
-          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %></span>
-          
+          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Войти', new_user_session_path %></span>
+          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Зарегистрироваться', new_user_registration_path %></span>
         <% end %>
       </nav>
     </div>
