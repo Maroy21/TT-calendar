@@ -1,11 +1,11 @@
 <%= userDate = @date %>
+<%= @user.id %>
 
 
-
-
+<span><%= link_to "next", "/main/2021/" + (userDate.month + 1).to_s %></span>
 
 <h1><%= userDate %></h1>
 <br>
-<% (Time.days_in_month(userDate.month, userDate.year)).times do %>
-  <%= render "./partials/eventCard" %>
+<% (Time.days_in_month(userDate.month, userDate.year)).times do |day|%>
+  <%= render "./partials/eventCard", day: day, user: @user, month: userDate.strftime("%B")%>
 <%end%>

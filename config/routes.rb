@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#main'
-  get '/:year/:month', to: 'pages#show'
-  
+  get '/main/:year/:month', to: 'pages#main'
+  resources :events
   devise_for :users
 end
