@@ -7,8 +7,10 @@
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         
         <% if user_signed_in? %>
-          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></span>
           <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Новое событие', new_event_path %></span>
+          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Мои события', events_path %></span>
+
+          <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></span>
 
         <% else %>
           <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Войти', new_user_session_path %></span>

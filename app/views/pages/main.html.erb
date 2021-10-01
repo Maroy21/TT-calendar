@@ -7,5 +7,5 @@
 <h1><%= userDate %></h1>
 <br>
 <% (Time.days_in_month(userDate.month, userDate.year)).times do |day|%>
-  <%= render "./partials/eventCard", day: day, user: @user, month: userDate.strftime("%B")%>
+  <%= render "./partials/eventCard", day: day, user: @user, date: userDate%>
 <%end%>

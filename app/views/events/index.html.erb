@@ -1,0 +1,9 @@
+<ul class="list-group list-group-flush">
+  <% @events.each do |event| %>
+    
+    <li class="list-group-item">
+      <%= link_to event.date, event %>
+    </li>
+    
+  <% end %>
+</ul>
