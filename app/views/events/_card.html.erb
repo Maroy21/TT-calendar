@@ -1,0 +1,10 @@
+<div class="card" style="margin-top: 10px">
+  <div class="card-header">
+    <%= event.date.strftime('%d %b %Y') %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Описание события:</h5>
+    <p class="card-text"><%= event.body %></p>
+    <span class="btn btn-primary" > <%= link_to 'Открыть', event, {style: "text-decoration: none; color: white"}%> </span>
+  </div>
+</div>

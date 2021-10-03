@@ -1,0 +1,7 @@
+<% @events.each do |event| %>
+    
+  <% if event.date.to_s == @date.to_s %>
+    <%= render "card", event: event %>
+  <% end %>
+    
+<% end %>

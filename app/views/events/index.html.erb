@@ -1,12 +1,11 @@
 <%= "Здесь пока нет событий" if @events.length == 0 %>
 
 
-<ul class="list-group list-group-flush">
+
   <% @events.each do |event| %>
     
-    <li class="list-group-item">
-      <%= link_to event.date, event %>
-    </li>
+    
+      <%= render "card", event: event %>
+    
     
   <% end %>
-</ul>

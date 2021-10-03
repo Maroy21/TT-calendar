@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.new
+    @date = params[:date]
   end
 
   def create

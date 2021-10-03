@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get '/main/:year/:month', to: 'pages#main'
   resources :events
   get '/events/date/:date', to: 'events#showAll'
+  get '/events/new/:date', to: 'events#new'
   devise_for :users
 end

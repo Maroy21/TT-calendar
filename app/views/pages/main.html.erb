@@ -1,11 +1,30 @@
-<%= userDate = @date %>
-<%= @user.id %>
+<% userDate = @date %>
+
+<div style="text-align: center; ">
+  <span class="btn btn-primary" style="display:inline-block"><%= link_to "prev",
+   "/main/" + (userDate.year - 1).to_s + "/" + userDate.month.to_s,
+   {style: "text-decoration: none; color: white"} %></span>
+  <h1 style="display:inline-block; margin-left: 5rem; margin-right: 5rem">    <%= userDate.year %>    </h1>
+  <span class="btn btn-primary" style="display:inline-block"><%= link_to "next",
+   "/main/" + (userDate.year + 1).to_s + "/" + userDate.month.to_s,
+   {style: "text-decoration: none; color: white"} %></span>
+</div>
+
+<div style="text-align: center">
+  <span class="btn btn-primary" style="display:inline-block"><%= link_to "prev",
+   "/main/" + userDate.year.to_s + "/" + (userDate.month - 1).to_s,
+   {style: "text-decoration: none; color: white"} %></span>
+  <h2 style="display:inline-block; margin-left: 5rem; margin-right: 5rem">    <%= userDate.strftime("%B") %>    </h2>
+  <span class="btn btn-primary" style="display:inline-block"><%= link_to "next",
+   "/main/" + userDate.year.to_s + "/" + (userDate.month + 1).to_s,
+   {style: "text-decoration: none; color: white"} %></span>
+</div>
 
 
-<span><%= link_to "next", "/main/2021/" + (userDate.month + 1).to_s %></span>
-
-<h1><%= userDate %></h1>
-<br>
-<% (Time.days_in_month(userDate.month, userDate.year)).times do |day|%>
-  <%= render "./partials/eventCard", day: day, user: @user, date: userDate%>
-<%end%>
+<div style="display: flex; justify-content: center">
+  <div style="width: 990px">
+    <% (Time.days_in_month(userDate.month, userDate.year)).times do |day|%>
+      <%= render "./partials/eventCard", day: day, user: @user, date: userDate%>
+    <%end%>
+  </div>
+</div>

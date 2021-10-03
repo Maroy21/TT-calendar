@@ -1,11 +1,17 @@
-<%= @event.date %>
-<br>
-<%= @event.body %>
-<br>
+<div class="card" style="margin-top: 10px">
+  <div class="card-header">
+    <%= @event.date.strftime('%d %b %Y') %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Описание события:</h5>
+    <p class="card-text"><%= @event.body %></p>
+    
+    <span class="btn btn-secondary"><%= link_to "Edit", edit_event_path(@event),
+                  {style: "text-decoration: none; color: white"} %></span>
+    <span class="btn btn-danger"><%= link_to "Destroy", event_path(@event),
+                    method: :delete,
+                    data: { confirm: "Are you sure?"},
+                    style: "text-decoration: none; color: white"%></span>
+  </div>
+</div>
 
-<ul style='margin-top : 1rem'>
-  <li class="btn btn-secondary"><%= link_to "Edit", edit_event_path(@event) %></li>
-  <li class="btn btn-danger"><%= link_to "Destroy", event_path(@event),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
