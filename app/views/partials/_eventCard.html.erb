@@ -11,7 +11,7 @@
     
     <% if cardEvent %>
       <p class="card-text"><%= "есть событие" %></p>
-      <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Открыть', '/events/' + cardEvent.id.to_s %></span>
+      <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Открыть', '/events/date/' + cardEvent.date.to_s %></span>
     <% else %>
       <p class="card-text"><%= "нет событий" %></p>
     <% end %>
