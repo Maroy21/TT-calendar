@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
     
   <% if event.date.to_s == @date.to_s %>
-    <%= render "card", event: event %>
+    <%= render "./partials/card", event: event %>
   <% end %>
     
 <% end %>

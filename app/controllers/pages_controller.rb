@@ -7,8 +7,14 @@ class PagesController < ApplicationController
     if params[:month] == nil
       @date = Date.today
     else
-      @date = Date.new(params[:year].to_i, ((params[:month].to_i - 1) % 12) +1, 1) 
+      @date = Date.new(params[:year].to_i, valid_month(params[:month]), 1) 
     end
     
   end 
+
+  private
+  def valid_month (month)
+    return ((month.to_i - 1) % 12) + 1
+  end 
+
 end

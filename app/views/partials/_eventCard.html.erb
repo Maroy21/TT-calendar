@@ -4,20 +4,28 @@
 <% color = "#C0C0C0" %>
 <% color = "#8FBC8F" if cardEvent %>
 
-<div class="card" style="width: 16rem; heght: 16rem; margin-top: 5px; display:inline-block; background:<%= color %>">
+<div class="card" style="width: 16rem; 
+                        heght: 16rem; 
+                        margin-top: 5px; 
+                        display:inline-block; 
+                        background:<%= color %>">
   <div class="card-body">
     <h5 class="card-title"><%= day + 1 %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= date.strftime("%B") %></h6>
     
     <% if cardEvent %>
       <p class="card-text"><%= "есть событие" %></p>
-      <span class="me-3 py-2 text-dark text-decoration-none" ><%= link_to 'Открыть', '/events/date/' + cardEvent.date.to_s %></span>
+      <span class="me-3 py-2 text-dark text-decoration-none" >
+        <%= link_to 'Открыть', '/events/date/' + cardEvent.date.to_s %>
+      </span>
       
     <% else %>
       <p class="card-text"><%= "нет событий" %></p>
     <% end %>
     
     
-    <span class="me-3 py-2 text-dark text-decoration-none"><%= link_to 'Новое', '/events/new/' + cardDate.to_s  %></span>
+    <span class="me-3 py-2 text-dark text-decoration-none">
+      <%= link_to 'Новое', '/events/new/' + cardDate.to_s  %>
+    </span>
   </div>
 </div>

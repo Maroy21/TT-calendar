@@ -1,11 +1,5 @@
 <%= "Здесь пока нет событий" if @events.length == 0 %>
 
-
-
-  <% @events.each do |event| %>
-    
-    
-      <%= render "card", event: event %>
-    
-    
-  <% end %>
+<% @events.each do |event| %> 
+  <%= render "./partials/card", event: event %>
+<% end %>

@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @events = current_user.events.all
   end
@@ -18,8 +20,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = User.find(current_user.id)            #why it works only like that?
-    @event = @user.events.create(event_params)
+    @event = current_user.events.create(event_params)
     if @event.save
       redirect_to @event
     else  

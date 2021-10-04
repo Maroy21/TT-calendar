@@ -7,11 +7,13 @@
     <p class="card-text"><%= @event.body %></p>
     
     <span class="btn btn-secondary"><%= link_to "Edit", edit_event_path(@event),
-                  {style: "text-decoration: none; color: white"} %></span>
+                                    {style: "text-decoration: none; color: white"} %>
+    </span>
     <span class="btn btn-danger"><%= link_to "Destroy", event_path(@event),
-                    method: :delete,
-                    data: { confirm: "Are you sure?"},
-                    style: "text-decoration: none; color: white"%></span>
+                                    method: :delete,
+                                    data: { confirm: "Are you sure?"},
+                                    style: "text-decoration: none; color: white"%>
+    </span>
   </div>
 </div>
 
