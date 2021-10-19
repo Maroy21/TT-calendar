@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'pages#main'
   get '/main/:year/:month', to: 'pages#main'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   before_action :authenticate_user!
 
@@ -8,7 +10,7 @@ class EventsController < ApplicationController
   def showAll
     @events = current_user.events.all
     @date = params[:date]
-  end 
+  end
 
   def show
     @event = current_user.events.find(params[:id])
@@ -23,12 +25,12 @@ class EventsController < ApplicationController
     @event = current_user.events.create(event_params)
     if @event.save
       redirect_to @event
-    else  
+    else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit 
+  def edit
     @event = current_user.events.find(params[:id])
   end
 
@@ -37,7 +39,7 @@ class EventsController < ApplicationController
 
     if @event.update(event_params)
       redirect_to @event
-    else  
+    else
       render :new, status: :unprocessable_entity
     end
   end
@@ -49,9 +51,9 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
-  def event_params 
+
+  def event_params
     params.require(:event).permit(:date, :body)
   end
 end
